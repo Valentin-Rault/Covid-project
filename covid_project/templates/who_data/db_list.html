@@ -1,0 +1,12 @@
+{% extends 'who_data/base.html' %}
+{% block content %}
+<p>Here is the list</p>
+<table>
+    <tr>
+        {% for i in range(1:5) %}
+            <td>{{datas.get(id=i)}}</td>
+        {% endfor %}
+    </tr>
+</table>
+
+{% endblock content %}
