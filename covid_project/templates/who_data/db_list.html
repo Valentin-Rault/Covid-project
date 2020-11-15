@@ -3,8 +3,8 @@
 <p>Here is the list</p>
 <table>
     <tr>
-        {% for i in range(1:5) %}
-            <td>{{datas.get(id=i)}}</td>
+        {% for data in datas|slice:':5' %}
+            <td>{{datas.country}}</td>
         {% endfor %}
     </tr>
 </table>
