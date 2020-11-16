@@ -4,7 +4,12 @@
 <table>
     <tr>
         {% for data in datas|slice:':5' %}
-            <td>{{datas.country}}</td>
+            <td>{{data.date_reported}}</td>
+            <td>{{data.country}}</td>
+            <td>{{data.new_cases}}</td>
+            <td>{{data.cumulative_cases}}</td>
+            <td>{{data.new_deaths}}</td>
+            <td>{{data.cumulative_deaths}}</td>
         {% endfor %}
     </tr>
 </table>
