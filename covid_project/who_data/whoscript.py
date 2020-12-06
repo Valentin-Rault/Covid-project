@@ -64,7 +64,7 @@ def update_database():
                     new_cases=int(line[2]),
                     cumulative_cases=int(line[3]),
                     new_deaths=int(line[4]),
-                    comulative_deaths=int(line[5]),
+                    cumulative_deaths=int(line[5]),
                     hash_column=line[6],
                 )
                 entry.save()
