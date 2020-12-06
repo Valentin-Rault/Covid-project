@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 
+from rest_framework import generics
+
+from .serializers import WhoDataSerializer
 from .models import WhoData
 
 
-class WhoDataListView(ListView):
-    model = WhoData
-    template_name = 'who_data/db_list.html'
-    context_object_name = 'datas'
+class WhoDataView(generics.ListAPIView):
+    queryset = WhoData.objects.all()
+    serializer_class = WhoDataSerializer
