@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
+import Card from "react-bootstrap/Card";
 
 import { VectorMap } from "react-jvectormap";
 
@@ -22,6 +23,8 @@ const mapData = {
   const Map = () => {
     return (
       <div>
+        <Card>
+        <Card.Body>
         <VectorMap
           map={"world_mill"}
           backgroundColor="transparent" //change it to ocean blue: #0077be
@@ -60,6 +63,9 @@ const mapData = {
             ]
           }}
         />
+        <Card.Footer className='text-muted'>World Map</Card.Footer>
+        </Card.Body>
+        </Card>
       </div>
     );
   };
