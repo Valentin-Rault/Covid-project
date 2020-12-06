@@ -4,4 +4,8 @@ covid_project/who_data/__pycache__/
 covid_project/who_data/migrations/__pycache__/
 covid_project/.vscode
 .vscode
+covid_project/.idea/
+covid_project/frontend/node_modules/
+covid_project/frontend/__pycache__/
+covid_project/frontend/migrations/__pycache__/
 
