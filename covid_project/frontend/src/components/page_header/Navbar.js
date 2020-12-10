@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
 
-export function HeaderNavbar() {
+
+function HeaderNavbar({ location }) {
+  const { pathname } = location;
+
   return (
     <Navbar bg='light' variant='light' expand='lg' sticky='top'>
       <Nav>
-        <Nav.Item>
-          <Navbar.Brand as={Link} to='/'>Home</Navbar.Brand>
-        </Nav.Item>
         <Nav.Item>
           <Navbar.Toggle aria-controls='basic-navbar-nav'/>
         </Nav.Item>
@@ -19,12 +20,17 @@ export function HeaderNavbar() {
           <Navbar.Collapse id='basic-navbar-nav'/>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link as={Link} to='/countries'>Countries</Nav.Link>
+          <Nav.Link as={Link} to='/' active={pathname == '/'}>Home</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link as={Link} to='/countries' active={pathname.includes('/countries')}>Countries</Nav.Link>
         </Nav.Item>
       </Nav>
     </Navbar>
   );
 }
+
+export default withRouter(HeaderNavbar);
 
 // render(<Navbar />, navabarDiv);
 
