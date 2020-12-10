@@ -59,7 +59,7 @@ def update_database():
                 pass
             else:
                 entry = WhoData.objects.create(
-                    date_reported=datetime.strptime(line[0], "%Y-%M-%d"),
+                    date_reported=datetime.strptime(line[0], "%Y-%m-%d"),
                     country=line[1],
                     new_cases=int(line[2]),
                     cumulative_cases=int(line[3]),
