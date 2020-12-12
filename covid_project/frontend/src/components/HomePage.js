@@ -1,14 +1,6 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 
 import { VectorMap } from "react-jvectormap";
 
@@ -26,11 +18,12 @@ const mapData = {
 const Map = () => {
   let history = useHistory();
 
-  const tip = document.getElementsByClassName("jvectormap-tip");
+  const tips = document.getElementsByClassName("jvectormap-tip");
 
-  const handleClick = (code, e) => {
-    // tip.style.display = "none";
-    history.push("/countries");
+  const handleClick = (e, countryCode) => {
+    tips[0].style.display = "none";
+    history.push(`/country/${countryCode}`);
+    console.log(countryCode);
   };
 
   return (

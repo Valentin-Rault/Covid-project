@@ -1,72 +1,72 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 
-// export const Countries = () => {
-//     return (
-//         <div>
-//             <h1>Choose a country</h1>
-//             <p>List of coutries</p>
-//             <ul>
-//                 <li>Australia</li>
-//                 <li>Belgium</li>
-//                 <li>Canada</li>
-//                 <li>Denmark</li>
-//                 <li>Australia</li>
-//                 <li>Belgium</li>
-//                 <li>Canada</li>
-//                 <li>Denmark</li>
-//                 <li>Australia</li>
-//                 <li>Belgium</li>
-//                 <li>Canada</li>
-//                 <li>Denmark</li>
-//                 <li>Australia</li>
-//                 <li>Belgium</li>
-//                 <li>Canada</li>
-//                 <li>Denmark</li>
-//                 <li>Australia</li>
-//                 <li>Belgium</li>
-//                 <li>Canada</li>
-//                 <li>Denmark</li>
+import { Line } from "react-chartjs-2";
 
-//             </ul>
-//         </div>
-//     )
-// }
+export const Countries = (props) => {
+  const [countryRequest, setCountryRequest] = useState({
+    date: "",
+    country: "",
+    newCases: "",
+  });
+  const [countryCode, setCountryCode] = useState(
+    props.match.params.countryCode
+  );
+  useEffect(() => {
+    fetch("/api/get-country" + "?code=" + countryCode)
+      .then((response) => response.json())
+      .then((data) => {
+        setCountryRequest({
+          date: data.date_reported,
+          country: data.country,
+          newCases: data.new_cases,
+          newDeaths: data.new_deaths,
+        });
+        console.log(data);
+      });
+  }, [countryCode]);
 
-import {Line} from 'react-chartjs-2';
+  const { date, country, newCases, newDeaths } = countryRequest;
 
-const state = {
-  labels: ['1', '2', '3',
-           '4', '5', '6', '7'],
-  datasets: [
-    {
-      label: 'Rainfall',
-      fill: false,
-      lineTension: 0.5,
-      backgroundColor: 'rgba(75,192,192,1)',
-      borderColor: 'rgba(0,0,0,1)',
-      borderWidth: 2,
-      data: [1129, 1468, 1586, 1605, 1603, 2115, 1745]
-    }
-  ]
-}
+  const state = {
+    labels: date,
+    datasets: [
+      {
+        label: "New Cases / Day",
+        fill: false,
+        lineTension: 0.5,
+        backgroundColor: "rgba(75,192,192,1)",
+        borderColor: "rgba(0,0,0,1)",
+        borderWidth: 2,
+        data: newCases,
+      },
+      //   {
+      //     label: "Death cases / Day",
+      //     fill: false,
+      //     lineTension: 0.5,
+      //     backgroundColor: "rgba(75, 192, 192, 1)",
+      //     borderColor: "rgba(0, 0, 0, 1)",
+      //     borderWidth: 2,
+      //     data: newDeaths,
+      //   },
+    ],
+  };
 
-export const Countries = () => {
-      return (
-          <div className='col-sm'>
-          <Line
-            data={state}
-            options={{
-              title:{
-                display:true,
-                text:'Average Rainfall per month',
-                fontSize:20
-              },
-              legend:{
-                display:true,
-                position:'right'
-              },
-            }}
-          />
-          </div>
-      );
-  }
+  return (
+    <div className="row-sm">
+      <Line
+        data={state}
+        options={{
+          title: {
+            display: true,
+            text: "New Cases in " + `${country}`,
+            fontSize: 20,
+          },
+          legend: {
+            display: true,
+            position: "right",
+          },
+        }}
+      />
+    </div>
+  );
+};

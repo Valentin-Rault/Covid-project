@@ -16,6 +16,7 @@ class Country(models.Model):
 class WhoData(models.Model):
     date_reported = models.DateField()
     # country = models.ForeignKey(Country, on_delete=models.DO_NOTHING)
+    country_code = models.CharField(max_length=5)
     country = models.CharField(max_length=100)
     new_cases = models.IntegerField()
     cumulative_cases = models.PositiveIntegerField()

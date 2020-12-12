@@ -6,8 +6,8 @@ class WhoDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = WhoData
         fields = (
-            'id',
             'date_reported',
+            'country_code',
             'country',
             'new_cases',
             'cumulative_cases',
