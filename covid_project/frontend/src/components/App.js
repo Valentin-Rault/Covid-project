@@ -1,10 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { Countries } from "./Countries";
+import { Container, Col } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+
 import { Header } from "./page_header/header";
 import { Homepage } from "./HomePage";
 import { Footer } from "./page_footer/footer";
+import { MainCountry } from "./page_country/country_main_page";
 
 export function App() {
   return (
@@ -13,21 +16,16 @@ export function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <Homepage />
+            <Card>
+              <Card.Body>
+                <Homepage />
+                <Card.Footer className="text-muted">World Map</Card.Footer>
+              </Card.Body>
+            </Card>
           </Route>
-          <Route
-            path="/country/:countryCode"
-            render={(props) => {
-              return (
-                <div className="container">
-                  <div className="col">
-                    <Countries {...props} />
-                    <Countries {...props} />
-                  </div>
-                </div>
-              );
-            }}
-          />
+          <Route path="/country">
+            <MainCountry />
+          </Route>
         </Switch>
         <Footer />
       </Router>
