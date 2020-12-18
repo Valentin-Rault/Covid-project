@@ -1,7 +1,8 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
@@ -17,23 +18,28 @@ function HeaderNavbar({ location }) {
         <Nav.Item>
           <Navbar.Collapse id="basic-navbar-nav" />
         </Nav.Item>
-        <Nav.Item>
-          <Nav.Link as={Link} to="/" active={pathname == "/"}>
-            Home
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            as={Link}
-            to="/country/DK"
-            active={pathname.includes("/country/DK")}
-          >
-            Countries
-          </Nav.Link>
-        </Nav.Item>
+        <HeaderLink path="/" activePath={pathname == "/"}>
+          Home
+        </HeaderLink>
+        <HeaderLink
+          path="/country/DK"
+          activePath={pathname.match("/country/[A-Z]{2}")}
+        >
+          Countries
+        </HeaderLink>
       </Nav>
     </Navbar>
   );
 }
+
+const HeaderLink = ({ path, activePath, children }) => {
+  return (
+    <Nav.Item>
+      <Nav.Link as={Link} to={path} active={activePath}>
+        {children}
+      </Nav.Link>
+    </Nav.Item>
+  );
+};
 
 export default withRouter(HeaderNavbar);

@@ -1,175 +1,3 @@
-/*! CommonJS bailout: exports is used directly at 1:70-77 */
-
-/*! CommonJS bailout: exports is used directly at 4:48-55 */
-
-/*! CommonJS bailout: exports is used directly at 4:80-87 */
-
-/*! CommonJS bailout: exports is used directly at 5:48-55 */
-
-/*! CommonJS bailout: exports is used directly at 5:80-87 */
-
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 10:121-141 */
-
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 11:504-524 */
-
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 12:312-332 */
-
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 13:15-35 */
-
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 16:248-268 */
-
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 19:56-76 */
-
-/*! CommonJS bailout: exports.unstable_shouldYield(...) prevents optimization as exports is passed as call context at 16:106-134 */
-
-/*! CommonJS bailout: module.exports is used directly at 103:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 10:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 112:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 11:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 122:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 12:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 13:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 14:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 15:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 16:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 17:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 18:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 18:2-16 */
-
-/*! CommonJS bailout: module.exports is used directly at 193:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 196:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 19:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 1:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 1:70-84 */
-
-/*! CommonJS bailout: module.exports is used directly at 2087:12-26 */
-
-/*! CommonJS bailout: module.exports is used directly at 20:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 21:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 227:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 22:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 230:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 23:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 24:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 25:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 26:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 27:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 28:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 29:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 2:2-16 */
-
-/*! CommonJS bailout: module.exports is used directly at 30:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 30:17-31 */
-
-/*! CommonJS bailout: module.exports is used directly at 31:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 31:17-31 */
-
-/*! CommonJS bailout: module.exports is used directly at 32:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 33:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 34:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 35:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 36:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 37:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 38:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 39:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 41:38-52 */
-
-/*! CommonJS bailout: module.exports is used directly at 42:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 43:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 43:2-16 */
-
-/*! CommonJS bailout: module.exports is used directly at 46:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 47:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 49:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 4:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 58:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 5:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 60:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 62:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 65:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 6:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 73:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 7:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 83:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 84:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 8:63-77 */
-
-/*! CommonJS bailout: module.exports is used directly at 8:67-81 */
-
-/*! CommonJS bailout: module.exports is used directly at 90:0-14 */
-
-/*! CommonJS bailout: module.exports is used directly at 9:0-14 */
-
-/*! CommonJS bailout: this is used directly at 10:2-6 */
-
-/*! CommonJS bailout: this is used directly at 11:2-6 */
-
-/*! CommonJS bailout: this is used directly at 12:2-6 */
-
-/*! CommonJS bailout: this is used directly at 13:2-6 */
-
-/*! CommonJS bailout: this is used directly at 14:2-6 */
-
-/*! CommonJS bailout: this is used directly at 1:300-304 */
-
-/*! CommonJS bailout: this is used directly at 1:4120-4124 */
-
-/*! CommonJS bailout: this is used directly at 9:2-6 */
-
 /*! default exports */
 
 /*! dynamic exports */
@@ -207,6 +35,8 @@
 /*! export ContextProvider [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export ContextProvider [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .ContextProvider */
+
+/*! export ControlLayout [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export Countries [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -2129,10 +1959,6 @@
   \****************************************************/
 
 /*!****************************************************!*\
-  !*** ./node_modules/react-bootstrap/esm/Button.js ***!
-  \****************************************************/
-
-/*!****************************************************!*\
   !*** ./node_modules/react-bootstrap/esm/Navbar.js ***!
   \****************************************************/
 
@@ -2362,6 +2188,10 @@
 
 /*!*******************************************************!*\
   !*** ./node_modules/react-router/esm/react-router.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./src/components/page_country/control_layout.js ***!
   \*******************************************************/
 
 /*!********************************************************!*\

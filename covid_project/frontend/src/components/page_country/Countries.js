@@ -6,37 +6,48 @@ export const Countries = (props) => {
   const [countryRequest, setCountryRequest] = useState({
     date: "",
     country: "",
-    newCases: "",
+    cases: "",
+    deaths: "",
   });
-  const [countryCode, setCountryCode] = useState(
-    props.match.params.countryCode
-  );
+
+  // const [countryCode, setCountryCode] = useState(
+  //   props.match.params.countryCode
+  // );
+
   useEffect(() => {
-    fetch("/api/get-country" + "?code=" + countryCode)
+    fetch("/api/get-country" + "?code=" + props.match.params.countryCode)
       .then((response) => response.json())
       .then((data) => {
         setCountryRequest({
           date: data.date_reported,
           country: data.country,
-          newCases: data.new_cases,
-          newDeaths: data.new_deaths,
+          cases:
+            props.cumulative === "true"
+              ? data.cumulative_cases
+              : data.new_cases,
+          deaths:
+            props.cumulative === "true"
+              ? data.cumulative_deaths
+              : data.new_deaths,
         });
       });
-  }, [countryCode]);
+  }, [props.location, props.cumulative]);
 
-  const { date, country, newCases, newDeaths } = countryRequest;
+  const { date, country, cases, deaths } = countryRequest;
 
   const state = {
     labels: date,
     datasets: [
       {
-        label: props.death ? "New Deaths / Day" : "New Cases / Day",
+        label: props.death
+          ? "N° of Deaths " + `${props.label}`
+          : "N° of Cases " + `${props.label}`,
         fill: false,
         lineTension: 0.5,
         backgroundColor: "rgba(75,192,192,1)",
         borderColor: "rgba(0,0,0,1)",
         borderWidth: 2,
-        data: props.death ? newDeaths : newCases,
+        data: props.death ? deaths : cases,
       },
       //   {
       //     label: "Death cases / Day",
@@ -58,8 +69,8 @@ export const Countries = (props) => {
           title: {
             display: true,
             text: props.death
-              ? "New Deaths in " + `${country}`
-              : "New Cases in " + `${country}`,
+              ? "Deaths in " + `${country}`
+              : "Cases in " + `${country}`,
             fontSize: 20,
           },
           legend: {

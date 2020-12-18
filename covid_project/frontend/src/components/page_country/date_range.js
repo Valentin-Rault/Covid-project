@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export function TimeRange() {
   const [startDate, setStartDate] = useState(new Date("2020/01/03"));
-  const [endDate, setEndDate] = useState(new Date("2020/12/12"));
+  const [endDate, setEndDate] = useState(new Date());
 
   return (
     <div>
@@ -23,6 +23,7 @@ export function TimeRange() {
             popperPlacement="bottom-end"
             startDate={startDate}
             endDate={endDate}
+            minDate={new Date("2020/01/03")}
           />
         </Col>
       </Row>
@@ -38,6 +39,7 @@ export function TimeRange() {
             startDate={startDate}
             endDate={endDate}
             minDate={startDate}
+            maxDate={new Date()}
           />
         </Col>
       </Row>
