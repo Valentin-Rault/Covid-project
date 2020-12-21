@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import DatePicker from "react-datepicker";
 import { Col, Row } from "react-bootstrap";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-export function TimeRange() {
-  const [startDate, setStartDate] = useState(new Date("2020/01/03"));
-  const [endDate, setEndDate] = useState(new Date());
-
+export function TimeRange({
+  startDate,
+  endDate,
+  changeStartDate,
+  changeEndDate,
+}) {
   return (
     <div>
       <Row className="mb-3">
@@ -18,7 +20,7 @@ export function TimeRange() {
           <DatePicker
             selected={startDate}
             dateFormat="dd/MM/yyyy"
-            onChange={(date) => setStartDate(date)}
+            onChange={changeStartDate}
             popperClassName="bottome-class"
             popperPlacement="bottom-end"
             startDate={startDate}
@@ -35,7 +37,7 @@ export function TimeRange() {
           <DatePicker
             selected={endDate}
             dateFormat="dd/MM/yyyy"
-            onChange={(date) => setEndDate(date)}
+            onChange={changeEndDate}
             startDate={startDate}
             endDate={endDate}
             minDate={startDate}

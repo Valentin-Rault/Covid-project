@@ -10,12 +10,20 @@ export const Countries = (props) => {
     deaths: "",
   });
 
-  // const [countryCode, setCountryCode] = useState(
-  //   props.match.params.countryCode
-  // );
+  let start = convert(props.startDate);
+  let end = convert(props.endDate);
+
+  let url =
+    "/api/get-country" +
+    "?code=" +
+    props.match.params.countryCode +
+    "&start_date=" +
+    start +
+    "&end_date=" +
+    end;
 
   useEffect(() => {
-    fetch("/api/get-country" + "?code=" + props.match.params.countryCode)
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setCountryRequest({
@@ -31,17 +39,18 @@ export const Countries = (props) => {
               : data.new_deaths,
         });
       });
-  }, [props.location, props.cumulative]);
+  }, [props.location, props.cumulative, props.startDate, props.endDate]);
 
   const { date, country, cases, deaths } = countryRequest;
+
+  const label = props.death ? "N° of Deaths" : "N° of Cases";
+  const text = props.death ? "Deaths in" : "Cases in";
 
   const state = {
     labels: date,
     datasets: [
       {
-        label: props.death
-          ? "N° of Deaths " + `${props.label}`
-          : "N° of Cases " + `${props.label}`,
+        label: `${label} ${props.label}`,
         fill: false,
         lineTension: 0.5,
         backgroundColor: "rgba(75,192,192,1)",
@@ -68,9 +77,7 @@ export const Countries = (props) => {
         options={{
           title: {
             display: true,
-            text: props.death
-              ? "Deaths in " + `${country}`
-              : "Cases in " + `${country}`,
+            text: `${text} ${country}`,
             fontSize: 20,
           },
           legend: {
@@ -81,4 +88,25 @@ export const Countries = (props) => {
       />
     </div>
   );
+};
+
+const convert = (obj) => {
+  var months = {
+      Jan: "01",
+      Feb: "02",
+      Mar: "03",
+      Apr: "04",
+      May: "05",
+      Jun: "06",
+      Jul: "07",
+      Aug: "08",
+      Sep: "09",
+      Oct: "10",
+      Nov: "11",
+      Dec: "12",
+    },
+    str = String(obj);
+  var date = str.split(" ");
+
+  return [date[3], months[date[1]], date[2]].join("-");
 };

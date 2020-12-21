@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { Container, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 
 import { Header } from "./page_header/header";

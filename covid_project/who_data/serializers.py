@@ -14,3 +14,12 @@ class WhoDataSerializer(serializers.ModelSerializer):
             'new_deaths',
             'cumulative_deaths',
         )
+
+
+class ListCountrySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WhoData
+        fields = (
+            'country_code',
+            'country',
+        )

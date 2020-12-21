@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Card } from "react-bootstrap";
 
 import { TimeRange } from "./date_range";
@@ -6,16 +6,12 @@ import { TimeRange } from "./date_range";
 export const ControlLayout = ({
   cumulativeHandleChange,
   countryHandleChange,
-  countryDetail,
+  startDate,
+  endDate,
+  changeStartDate,
+  changeEndDate,
 }) => {
-  const createCountriesOption = (obj) => {
-    Object.entries(obj).forEach(([code, country]) => (
-      <option key={code} value={code}>
-        {country}
-      </option>
-    ));
-    console.log(Object.entries(obj));
-  };
+  const countryList = fetchAPI("/api/country-list");
 
   return (
     <Container>
@@ -31,12 +27,13 @@ export const ControlLayout = ({
                   </Form.Label>
                   <Col>
                     <Form.Control as="select" onChange={countryHandleChange}>
-                      {/* {createCountriesOption(countryDetail)} */}
-                      <option value="">--Choose a country--</option>
-                      <option value="CA">Canada</option>
-                      <option value="DK">Denmark</option>
-                      <option value="FR">France</option>
-                      <option value="UG">Uganda</option>
+                      {Object.entries(countryList).map(([code, country]) => {
+                        return (
+                          <option key={code} value={code}>
+                            {country}
+                          </option>
+                        );
+                      })}
                     </Form.Control>
                   </Col>
                 </Form.Group>
@@ -56,7 +53,12 @@ export const ControlLayout = ({
             <Col md={4}>
               <Form>
                 <h4>Choose a Date</h4>
-                <TimeRange />
+                <TimeRange
+                  startDate={startDate}
+                  endDate={endDate}
+                  changeStartDate={changeStartDate}
+                  changeEndDate={changeEndDate}
+                />
               </Form>
             </Col>
           </Row>
@@ -77,4 +79,15 @@ const FormSelect = ({ id, children, formHandleChange }) => {
       </Form.Control>
     </Col>
   </Form.Group>;
+};
+
+const fetchAPI = (url) => {
+  const [response, setResponse] = useState({});
+  useEffect(() => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setResponse(data));
+  }, [url]);
+
+  return response;
 };

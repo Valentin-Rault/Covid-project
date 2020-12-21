@@ -8,16 +8,16 @@ import { Countries } from "./Countries";
 
 export const MainCountry = () => {
   let history = useHistory();
-  const [countryDetail, setCountryDetail] = useState({});
 
   const [cumulative, setCumulative] = useState(false);
   const [label, setLabel] = useState("/ Day");
 
-  useEffect(() => {
-    fetch("/api/country-list")
-      .then((response) => response.json())
-      .then((data) => setCountryDetail(data));
-  }, []);
+  const yesterday = (d) => {
+    new Date(d.setDate(d.getDate() - 1));
+    return d;
+  };
+  const [startDate, setStartDate] = useState(new Date("2020/01/03"));
+  const [endDate, setEndDate] = useState(yesterday(new Date()));
 
   const cumulativeHandleChange = (e) => {
     setCumulative(e.target.value);
@@ -28,23 +28,42 @@ export const MainCountry = () => {
     history.push(`/country/${e.target.value}`);
   };
 
+  const changeStartDate = (date) => {
+    setStartDate(date);
+  };
+
+  const changeEndDate = (date) => {
+    setEndDate(date);
+  };
+
   return (
     <div>
       <ControlLayout
         cumulativeHandleChange={cumulativeHandleChange}
         countryHandleChange={countryHandleChange}
-        countryDetail={countryDetail}
+        startDate={startDate}
+        endDate={endDate}
+        changeStartDate={changeStartDate}
+        changeEndDate={changeEndDate}
       />
       <Route
         path={`/country/:countryCode`}
         render={(props) => {
           return (
             <Container>
-              <Countries cumulative={cumulative} label={label} {...props} />
+              <Countries
+                cumulative={cumulative}
+                label={label}
+                startDate={startDate}
+                endDate={endDate}
+                {...props}
+              />
               <Countries
                 death
                 cumulative={cumulative}
                 label={label}
+                startDate={startDate}
+                endDate={endDate}
                 {...props}
               />
             </Container>
