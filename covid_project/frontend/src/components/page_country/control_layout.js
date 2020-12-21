@@ -1,17 +1,28 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { Container, Row, Col, Form, Card } from "react-bootstrap";
 
 import { TimeRange } from "./date_range";
+import { FormOptionList } from "./form_option_list";
 
 export const ControlLayout = ({
   cumulativeHandleChange,
-  countryHandleChange,
   startDate,
   endDate,
   changeStartDate,
   changeEndDate,
 }) => {
+  let history = useHistory();
+
   const countryList = fetchAPI("/api/country-list");
+  const cumulative = {
+    false: "Per Day",
+    true: "Cumulative",
+  };
+
+  const countryHandleChange = (e) => {
+    history.push(`/country/${e.target.value}`);
+  };
 
   return (
     <Container>
@@ -21,33 +32,21 @@ export const ControlLayout = ({
             <Col md={4}>
               <Form>
                 <h4>Choose a Country</h4>
-                <Form.Group as={Row} controlId="formHorizontalCountry">
-                  <Form.Label column md={4}>
-                    Country:
-                  </Form.Label>
-                  <Col>
-                    <Form.Control as="select" onChange={countryHandleChange}>
-                      {Object.entries(countryList).map(([code, country]) => {
-                        return (
-                          <option key={code} value={code}>
-                            {country}
-                          </option>
-                        );
-                      })}
-                    </Form.Control>
-                  </Col>
-                </Form.Group>
-                <Form.Group as={Row} controlId="formHorizontalCumulative">
-                  <Form.Label column md={4}>
-                    Data:
-                  </Form.Label>
-                  <Col>
-                    <Form.Control as="select" onChange={cumulativeHandleChange}>
-                      <option value="false">Per Day</option>
-                      <option value="true">Cumulative</option>
-                    </Form.Control>
-                  </Col>
-                </Form.Group>
+                <FormOptionList
+                  id="forHorizontalCountry"
+                  formHandleChange={countryHandleChange}
+                  obj={countryList}
+                >
+                  Country:
+                </FormOptionList>
+
+                <FormOptionList
+                  id="formHorizontalCumulative"
+                  formHandleChange={cumulativeHandleChange}
+                  obj={cumulative}
+                >
+                  Data:
+                </FormOptionList>
               </Form>
             </Col>
             <Col md={4}>
@@ -66,19 +65,6 @@ export const ControlLayout = ({
       </Card>
     </Container>
   );
-};
-
-const FormSelect = ({ id, children, formHandleChange }) => {
-  <Form.Group as={Row} controlId={id}>
-    <Form.Label column md={4}>
-      {children}
-    </Form.Label>
-    <Col>
-      <Form.Control as="select" onChange={formHandleChange}>
-        {createCountriesOption()}
-      </Form.Control>
-    </Col>
-  </Form.Group>;
 };
 
 const fetchAPI = (url) => {
