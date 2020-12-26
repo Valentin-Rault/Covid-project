@@ -7,6 +7,7 @@ from .models import WhoData
 class WhoDataAdmin(admin.ModelAdmin):
     list_display = (
         "date_reported",
+        'country_code',
         "country",
         "new_cases",
         "cumulative_cases",

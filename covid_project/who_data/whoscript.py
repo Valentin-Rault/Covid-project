@@ -32,7 +32,7 @@ def fetch_format_csv():
     url = "https://covid19.who.int/WHO-COVID-19-global-data.csv"
     df = pd.read_csv(url)
     df["hash_column"] = df["Date_reported"].astype(str) + df["Country_code"].astype(str)
-    df.drop(["Country_code", "WHO_region"], axis="columns", inplace=True)
+    df.drop(["WHO_region"], axis="columns", inplace=True)
     df["Date_reported"] = pd.to_datetime(df["Date_reported"])
     df.rename(
         columns={
@@ -55,17 +55,18 @@ def update_database():
     with open("whodata.csv") as f:
         reader = csv.reader(f)
         for line in reader:
-            if WhoData.objects.filter(hash_column=line[6]).exists():
+            if WhoData.objects.filter(hash_column=line[7]).exists():
                 pass
             else:
                 entry = WhoData.objects.create(
                     date_reported=datetime.strptime(line[0], "%Y-%m-%d"),
-                    country=line[1],
-                    new_cases=int(line[2]),
-                    cumulative_cases=int(line[3]),
-                    new_deaths=int(line[4]),
-                    cumulative_deaths=int(line[5]),
-                    hash_column=line[6],
+                    country_code=line[1],
+                    country=line[2],
+                    new_cases=int(line[3]),
+                    cumulative_cases=int(line[4]),
+                    new_deaths=int(line[5]),
+                    cumulative_deaths=int(line[6]),
+                    hash_column=line[7],
                 )
                 entry.save()
 

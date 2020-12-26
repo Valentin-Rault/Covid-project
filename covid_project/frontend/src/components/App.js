@@ -1,23 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { Countries } from "./Countries";
+import Card from "react-bootstrap/Card";
+
 import { Header } from "./page_header/header";
 import { Homepage } from "./HomePage";
 import { Footer } from "./page_footer/footer";
-
-function C() {
-  const [x, setX] = useState(0);
-  return (
-    <Switch>
-      <Route exact path="/">
-        I am up here
-      </Route>
-      <Route path="/countries">Here as well (countries)</Route>
-      {/* <Route path='/compare' component={CompareCountries}></Route> */}
-    </Switch>
-  );
-}
+import { MainCountry } from "./page_country/country_main_page";
 
 export function App() {
   return (
@@ -26,17 +15,16 @@ export function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <Homepage />
+            <Card>
+              <Card.Body>
+                <Homepage />
+                <Card.Footer className="text-muted">World Map</Card.Footer>
+              </Card.Body>
+            </Card>
           </Route>
-          <Route path="/countries">
-            <div className="container">
-              <div className="row">
-                <Countries />
-                <Countries />
-              </div>
-            </div>
+          <Route path="/country">
+            <MainCountry />
           </Route>
-          {/* <Route path='/compare' component={CompareCountries}></Route> */}
         </Switch>
         <Footer />
       </Router>

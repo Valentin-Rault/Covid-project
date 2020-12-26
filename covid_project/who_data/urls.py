@@ -2,9 +2,10 @@ from django.urls import path
 from django.views.generic import TemplateView
 
 from . import views
-from .views import WhoDataView
+from .views import WhoDataView, GetCountry, CountryList
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='who_data/base.html'), name='home'),
     path('who-data/', WhoDataView.as_view(), name='db_list'),
+    path('get-country', GetCountry.as_view(), name='get_country'),
+    path('country-list', CountryList.as_view(), name='country_list'),
 ]

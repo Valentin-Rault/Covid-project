@@ -4,5 +4,6 @@ from .views import index
 
 urlpatterns = [
     path('', index, name='index'),
-    path('countries/', index, name='countries'),
+    path('country/', index, name='country'),
+    path('country/<str:countryCode>', index, name='countries'),
 ]
