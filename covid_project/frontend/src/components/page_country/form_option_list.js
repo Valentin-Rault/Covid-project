@@ -4,14 +4,25 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-export const FormOptionList = ({ id, formHandleChange, obj, children }) => {
+export const FormOptionList = ({
+  id,
+  formHandleChange,
+  obj,
+  selectedValue,
+  labelSize,
+  children,
+}) => {
   return (
     <Form.Group as={Row} controlId={id}>
-      <Form.Label column md={4}>
+      <Form.Label column md={labelSize}>
         {children}
       </Form.Label>
       <Col>
-        <Form.Control as="select" onChange={formHandleChange}>
+        <Form.Control
+          as="select"
+          value={selectedValue}
+          onChange={formHandleChange}
+        >
           {optionsList(obj)}
         </Form.Control>
       </Col>

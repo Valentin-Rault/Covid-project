@@ -27,6 +27,12 @@ function HeaderNavbar({ location }) {
         >
           Countries
         </HeaderLink>
+        <HeaderLink
+          path="/compare-countries"
+          activePath={pathname.includes("/compare-countries")}
+        >
+          Compare Countries
+        </HeaderLink>
       </Nav>
     </Navbar>
   );

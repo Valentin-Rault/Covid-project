@@ -1,6 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
+import Card from "react-bootstrap/Card";
+
 import { VectorMap } from "react-jvectormap";
 
 const mapData = {
@@ -61,6 +63,10 @@ const Map = () => {
             values: mapData, //this is your data
             scale: ["#146804", "#ff0000"], //your color game's here
             normalizeFunction: "polynomial",
+            legend: {
+              vertical: true,
+              title: "infection rate / 100.000",
+            },
           },
         ],
       }}
@@ -69,5 +75,12 @@ const Map = () => {
 };
 
 export const Homepage = () => {
-  return <Map />;
+  return (
+    <Card>
+      <Card.Body>
+        <Map />
+        <Card.Footer className="text-muted">World Map</Card.Footer>
+      </Card.Body>
+    </Card>
+  );
 };
