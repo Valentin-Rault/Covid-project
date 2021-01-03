@@ -30,33 +30,33 @@ export const Countries = (props) => {
           date: data.date_reported,
           country: data.country,
           cases:
-            props.cumulative === "true"
+            props.isCumulative === "true"
               ? data.cumulative_cases
               : data.new_cases,
           deaths:
-            props.cumulative === "true"
+            props.isCumulative === "true"
               ? data.cumulative_deaths
               : data.new_deaths,
         });
       });
-  }, [props.location, props.cumulative, props.startDate, props.endDate]);
+  }, [props.location, props.isCumulative, props.startDate, props.endDate]);
 
   const { date, country, cases, deaths } = countryRequest;
 
-  const label = props.death ? "N° of Deaths" : "N° of Cases";
-  const text = props.death ? "Deaths in" : "Cases in";
+  const labelData = props.isDeath ? "N° of Deaths" : "N° of Cases";
+  const text = props.isDeath ? "Deaths in" : "Cases in";
 
   const state = {
     labels: date,
     datasets: [
       {
-        label: `${label} ${props.label}`,
+        label: `${labelData} ${props.label}`,
         fill: false,
         lineTension: 0.5,
         backgroundColor: "rgba(75,192,192,1)",
-        borderColor: "rgba(0,0,0,1)",
+        borderColor: "rgba(67,162,202,1)",
         borderWidth: 2,
-        data: props.death ? deaths : cases,
+        data: props.isDeath ? deaths : cases,
       },
       //   {
       //     label: "Death cases / Day",
@@ -77,7 +77,7 @@ export const Countries = (props) => {
         options={{
           title: {
             display: true,
-            text: `${text} ${country}`,
+            text: `${text} ${country} ${props.label}`,
             fontSize: 20,
           },
           legend: {

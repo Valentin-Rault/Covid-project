@@ -12,6 +12,8 @@
 
 /*! export BrowserRouter [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export BrowserRouter [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .BrowserRouter */
+
 /*! export Bubble [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export Chart [provided] [no usage info] [missing usage info prevents renaming] */
@@ -19,6 +21,8 @@
 /*! export Children [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export Children [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .Children */
+
+/*! export CompareControlLayout [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export Component [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -70,6 +74,8 @@
 
 /*! export HashRouter [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export HashRouter [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .HashRouter */
+
 /*! export Header [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export Homepage [provided] [no usage info] [missing usage info prevents renaming] */
@@ -88,7 +94,11 @@
 
 /*! export Link [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export Link [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .Link */
+
 /*! export Logo [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export MainCompare [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export MainCountry [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -106,7 +116,11 @@
 
 /*! export MemoryRouter [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .MemoryRouter */
 
+/*! export MemoryRouter [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .MemoryRouter */
+
 /*! export NavLink [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export NavLink [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .NavLink */
 
 /*! export Pie [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -128,6 +142,8 @@
 
 /*! export Prompt [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .Prompt */
 
+/*! export Prompt [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .Prompt */
+
 /*! export PureComponent [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export PureComponent [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .PureComponent */
@@ -138,21 +154,29 @@
 
 /*! export Redirect [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .Redirect */
 
+/*! export Redirect [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .Redirect */
+
 /*! export Reference [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-popper/lib/esm/Reference.js .default */
 
 /*! export Route [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export Route [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .Route */
 
+/*! export Route [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .Route */
+
 /*! export Router [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export Router [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .Router */
+
+/*! export Router [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .Router */
 
 /*! export Scatter [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export StaticRouter [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export StaticRouter [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .StaticRouter */
+
+/*! export StaticRouter [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .StaticRouter */
 
 /*! export StrictMode [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -170,6 +194,8 @@
 
 /*! export Switch [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .Switch */
 
+/*! export Switch [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .Switch */
+
 /*! export ThemeConsumer [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export TimeRange [provided] [no usage info] [missing usage info prevents renaming] */
@@ -186,9 +212,13 @@
 
 /*! export __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED */
 
+/*! export __esModule [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
+
 /*! export __esModule [not provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export __esModule [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export __esModule [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .__esModule */
 
 /*! export canAcceptRef [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -228,6 +258,8 @@
 
 /*! export createRef [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .createRef */
 
+/*! export default [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
+
 /*! export default [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export defaultKey [provided] [no usage info] [missing usage info prevents renaming] */
@@ -249,6 +281,8 @@
 /*! export generatePath [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export generatePath [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .generatePath */
+
+/*! export generatePath [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .generatePath */
 
 /*! export hydrate [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -331,6 +365,8 @@
 /*! export matchPath [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export matchPath [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .matchPath */
+
+/*! export matchPath [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .matchPath */
 
 /*! export memo [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -486,6 +522,8 @@
 
 /*! export useHistory [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .useHistory */
 
+/*! export useHistory [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .useHistory */
+
 /*! export useImperativeHandle [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export useImperativeHandle [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .useImperativeHandle */
@@ -498,6 +536,8 @@
 
 /*! export useLocation [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .useLocation */
 
+/*! export useLocation [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .useLocation */
+
 /*! export useMemo [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export useMemo [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .useMemo */
@@ -505,6 +545,8 @@
 /*! export useParams [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export useParams [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .useParams */
+
+/*! export useParams [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .useParams */
 
 /*! export useReducer [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -517,6 +559,8 @@
 /*! export useRouteMatch [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export useRouteMatch [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .useRouteMatch */
+
+/*! export useRouteMatch [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .useRouteMatch */
 
 /*! export useState [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -538,11 +582,15 @@
 
 /*! export withRouter [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .withRouter */
 
+/*! export withRouter [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-router-dom/cjs/react-router-dom.min.js .withRouter */
+
 /*! exports [not provided] [no usage info] */
 
 /*! flagged exports */
 
 /*! namespace exports */
+
+/*! other exports [maybe provided (runtime-defined)] [no usage info] */
 
 /*! other exports [not provided] [no usage info] */
 
@@ -1720,6 +1768,10 @@
   !*** ./node_modules/moment/locale/uz-latn.js ***!
   \***********************************************/
 
+/*!***********************************************!*\
+  !*** ./node_modules/react-router-dom/Link.js ***!
+  \***********************************************/
+
 /*!************************************************!*\
   !*** ./node_modules/date-fns/esm/max/index.js ***!
   \************************************************/
@@ -1774,6 +1826,10 @@
 
 /*!************************************************!*\
   !*** ./node_modules/moment/locale/x-pseudo.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./node_modules/react-router-dom/index.js ***!
   \************************************************/
 
 /*!*************************************************!*\
@@ -2400,6 +2456,10 @@
   !*** ./node_modules/react-bootstrap/esm/NavbarCollapse.js ***!
   \************************************************************/
 
+/*!************************************************************!*\
+  !*** ./node_modules/tiny-warning/dist/tiny-warning.esm.js ***!
+  \************************************************************/
+
 /*!*************************************************************!*\
   !*** ./node_modules/@restart/hooks/esm/useEventCallback.js ***!
   \*************************************************************/
@@ -2480,6 +2540,10 @@
   !*** ./node_modules/resolve-pathname/esm/resolve-pathname.js ***!
   \***************************************************************/
 
+/*!***************************************************************!*\
+  !*** ./src/components/compare_countries/compare_countries.js ***!
+  \***************************************************************/
+
 /*!****************************************************************!*\
   !*** ./node_modules/date-fns/esm/_lib/getUTCWeekYear/index.js ***!
   \****************************************************************/
@@ -2552,6 +2616,10 @@
   !*** ./node_modules/react-bootstrap/esm/createChainedFunction.js ***!
   \*******************************************************************/
 
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-router-dom/cjs/react-router-dom.min.js ***!
+  \*******************************************************************/
+
 /*!********************************************************************!*\
   !*** ./node_modules/date-fns/esm/_lib/startOfUTCWeekYear/index.js ***!
   \********************************************************************/
@@ -2562,6 +2630,14 @@
 
 /*!********************************************************************!*\
   !*** ./node_modules/react-datepicker/dist/react-datepicker.min.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./src/components/compare_countries/compare_control_layout.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./src/components/compare_countries/main_compare_countries.js ***!
   \********************************************************************/
 
 /*!*********************************************************************!*\
@@ -2606,6 +2682,10 @@
 
 /*!************************************************************************!*\
   !*** ./node_modules/date-fns/esm/locale/_lib/buildLocalizeFn/index.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/react-router-dom/warnAboutDeprecatedCJSRequire.js ***!
   \************************************************************************/
 
 /*!*************************************************************************!*\

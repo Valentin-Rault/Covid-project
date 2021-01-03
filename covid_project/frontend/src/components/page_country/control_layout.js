@@ -36,6 +36,7 @@ export const ControlLayout = ({
                   id="forHorizontalCountry"
                   formHandleChange={countryHandleChange}
                   obj={countryList}
+                  labelSize={4}
                 >
                   Country:
                 </FormOptionList>
@@ -44,6 +45,7 @@ export const ControlLayout = ({
                   id="formHorizontalCumulative"
                   formHandleChange={cumulativeHandleChange}
                   obj={cumulative}
+                  labelSize={4}
                 >
                   Data:
                 </FormOptionList>

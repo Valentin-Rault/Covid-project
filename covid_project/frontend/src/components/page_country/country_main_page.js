@@ -34,7 +34,6 @@ export const MainCountry = () => {
     <div>
       <ControlLayout
         cumulativeHandleChange={cumulativeHandleChange}
-        selectedCumulative={cumulative}
         startDate={startDate}
         endDate={endDate}
         changeStartDate={changeStartDate}
@@ -46,15 +45,15 @@ export const MainCountry = () => {
           return (
             <Container>
               <Countries
-                cumulative={cumulative}
+                isCumulative={cumulative}
                 label={label}
                 startDate={startDate}
                 endDate={endDate}
                 {...props}
               />
               <Countries
-                death
-                cumulative={cumulative}
+                isDeath
+                isCumulative={cumulative}
                 label={label}
                 startDate={startDate}
                 endDate={endDate}
