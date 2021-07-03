@@ -1,6 +1,13 @@
 # Covid-project
 Final project for SDA studies
 
+## How to run it
+### With SQLite
+Use docker run --net=host valentinrault/covid:val-2
+
+### With empty postgreSQL
+Use docker-compose up
+
 ## Project Description
 This project is aiming to analyse data for the coronavirus and present it in a clear way using charts.
 
