@@ -18,12 +18,10 @@ export const MainCompare = () => {
 
   const cumulativeHandleChange = (e) => {
     setIsCumulative(e.target.value);
-    // setLabel(e.target.value === "true" ? "Total" : "/ Day");
   };
 
   const firstCountryChange = (e) => {
     setFirstCountryCode(e.target.value);
-    console.log(firstCountryCode);
   };
 
   const secondCountryChange = (e) => {
@@ -53,7 +51,6 @@ export const MainCompare = () => {
       <Container>
         <Countries
           isCumulative={isCumulative}
-          isDeath={false}
           firstCountryCode={firstCountryCode}
           secondCountryCode={secondCountryCode}
           startDate={startDate}
@@ -61,7 +58,7 @@ export const MainCompare = () => {
         />
         <Countries
           isCumulative={isCumulative}
-          isDeath={true}
+          isDeath
           firstCountryCode={firstCountryCode}
           secondCountryCode={secondCountryCode}
           startDate={startDate}

@@ -31,18 +31,19 @@ export const MainCountry = () => {
   };
 
   return (
-    <div>
-      <ControlLayout
-        cumulativeHandleChange={cumulativeHandleChange}
-        startDate={startDate}
-        endDate={endDate}
-        changeStartDate={changeStartDate}
-        changeEndDate={changeEndDate}
-      />
-      <Route
-        path={`/country/:countryCode`}
-        render={(props) => {
-          return (
+    <Route
+      path={`/country/:countryCode`}
+      render={(props) => {
+        return (
+          <div>
+            <ControlLayout
+              cumulativeHandleChange={cumulativeHandleChange}
+              startDate={startDate}
+              endDate={endDate}
+              changeStartDate={changeStartDate}
+              changeEndDate={changeEndDate}
+              {...props}
+            />
             <Container>
               <Countries
                 isCumulative={cumulative}
@@ -60,9 +61,9 @@ export const MainCountry = () => {
                 {...props}
               />
             </Container>
-          );
-        }}
-      />
-    </div>
+          </div>
+        );
+      }}
+    />
   );
 };

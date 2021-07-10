@@ -5,13 +5,7 @@ import { Container, Row, Col, Form, Card } from "react-bootstrap";
 import { TimeRange } from "./date_range";
 import { FormOptionList } from "./form_option_list";
 
-export const ControlLayout = ({
-  cumulativeHandleChange,
-  startDate,
-  endDate,
-  changeStartDate,
-  changeEndDate,
-}) => {
+export const ControlLayout = (props) => {
   let history = useHistory();
 
   const countryList = fetchAPI("/api/country-list");
@@ -35,6 +29,7 @@ export const ControlLayout = ({
                 <FormOptionList
                   id="forHorizontalCountry"
                   formHandleChange={countryHandleChange}
+                  selectedValue={props.match.params.countryCode}
                   obj={countryList}
                   labelSize={4}
                 >
@@ -43,7 +38,7 @@ export const ControlLayout = ({
 
                 <FormOptionList
                   id="formHorizontalCumulative"
-                  formHandleChange={cumulativeHandleChange}
+                  formHandleChange={props.cumulativeHandleChange}
                   obj={cumulative}
                   labelSize={4}
                 >
@@ -55,10 +50,10 @@ export const ControlLayout = ({
               <Form>
                 <h4>Choose a Date</h4>
                 <TimeRange
-                  startDate={startDate}
-                  endDate={endDate}
-                  changeStartDate={changeStartDate}
-                  changeEndDate={changeEndDate}
+                  startDate={props.startDate}
+                  endDate={props.endDate}
+                  changeStartDate={props.changeStartDate}
+                  changeEndDate={props.changeEndDate}
                 />
               </Form>
             </Col>
