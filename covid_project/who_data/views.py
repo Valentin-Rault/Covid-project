@@ -29,7 +29,7 @@ class GetCountry(APIView):
                 formatted_data = self.format_data_to_list(data)
                 return Response(formatted_data, status=status.HTTP_200_OK)
             return Response({'message': 'Country code not found'}, status=status.HTTP_404_NOT_FOUND)
-        return Response({'Bad Request': 'Code parameter not found in request'}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({'message': 'Code parameter not found in request'}, status=status.HTTP_400_BAD_REQUEST)
 
     def format_data_to_list(self, data):
         data_list = dict()
