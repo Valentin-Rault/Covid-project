@@ -45,17 +45,9 @@ export const Countries = ({
     endDate
   );
 
-  // const { firstDate, firstCountryName, firstCases, firstDeaths } = firstCountry;
-  // const {
-  //   _secondDate,
-  //   secondCountryName,
-  //   secondCases,
-  //   secondDeaths,
-  // } = secondCountry;
-
   const labelData = isDeath ? "N° of Deaths" : "N° of Cases";
   const labelCumulative = isCumulative ? "Total" : "Per Day";
-  const text = isDeath ? "Deaths in" : "Cases in";
+  const text = isDeath ? "Deaths / population in" : "Cases / population in";
 
   const state = {
     labels: firstCountry.date,
@@ -82,22 +74,25 @@ export const Countries = ({
   };
 
   return (
-    <div className="row-sm mb-5">
-      <Line
-        data={state}
-        options={{
-          title: {
-            display: true,
-            text: `${labelData} ${labelCumulative}`,
-            fontSize: 20,
-          },
-          legend: {
-            display: true,
-            position: "right",
-          },
-        }}
-      />
-    </div>
+    <>
+      <div className="row-sm mb-5">
+        <Line
+          data={state}
+          options={{
+            title: {
+              display: true,
+              text: `${labelData} ${labelCumulative}`,
+              fontSize: 20,
+            },
+            legend: {
+              display: true,
+              position: "right",
+            },
+          }}
+          redraw
+        />
+      </div>
+    </>
   );
 };
 
@@ -122,23 +117,40 @@ const convert = (obj) => {
   return [date[3], months[date[1]], date[2]].join("-");
 };
 
+const countryPop = async (countryName) => {
+  const response = await fetch(
+    "https://countriesnow.space/api/v0.1/countries/population/"
+  );
+  const data = await response.json();
+  if (response.status >= 400) throw Error(data.message);
+  const countryEveryYear = data.data.filter(
+    (country) => country.country.toLowerCase() === countryName.toLowerCase()
+  );
+  const countryLastYear = countryEveryYear[0].populationCounts.pop();
+  return countryLastYear;
+};
+
 const fetchAPI = (url, countryCode, isCumulative, startDate, endDate) => {
   const [obj, setObj] = useState({});
-  useEffect(() => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setObj({
-          date: data.date_reported,
-          country: data.country,
-          cases:
-            isCumulative === "true" ? data.cumulative_cases : data.new_cases,
-          deaths:
-            isCumulative === "true" ? data.cumulative_deaths : data.new_deaths,
-        });
-      });
+  useEffect(async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    if (response.status >= 400) throw Error(data.message);
+
+    const countryLastYear = await countryPop(data.country);
+    setObj({
+      date: data.date_reported,
+      country: data.country,
+      cases:
+        isCumulative === "true"
+          ? data.cumulative_cases.map((case_) => case_ / countryLastYear.value)
+          : data.new_cases.map((case_) => case_ / countryLastYear.value),
+      deaths:
+        isCumulative === "true"
+          ? data.cumulative_deaths.map((death) => death / countryLastYear.value)
+          : data.new_deaths.map((death) => death / countryLastYear.value),
+    });
   }, [countryCode, isCumulative, startDate, endDate]);
-  console.log(obj);
 
   return obj;
 };
