@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
-from .secret import secret_key
-
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = secret_key
-
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+# , 'n@gh+hue9pkf915frd_ssok3sifvcz$j(#a9erxodo^_rsgx%o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -82,9 +82,9 @@ WSGI_APPLICATION = "covid_project.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "covid_project1",
+        "NAME": os.getenv('DB', "covid_project1"),
         "USER": "usercovid",
-        "PASSWORD": "Secretpassword",
+        "PASSWORD": os.getenv('DB_PASSWORD', "Secretpassword"),
         "HOST": "localhost",
         "PORT": "5432",
     },

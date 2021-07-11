@@ -10,9 +10,31 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
+      max-parallel: 4
       matrix:
-        python-version: [3.6, 3.7, 3.8, 3.9]
+        db: [postgres]
+        python-version: [3.8]
+        include:
+          - db: postgres
+            db_port: 5432
 
+    services:
+      postgres:
+        image: postgres:10
+        env:
+          POSTGRES_USER: usercovid
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          POSTGRES_DB: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    env:
+      DJANGO_SECRET_KEY: ${{secrets.DJANGO_SECRET_KEY}}
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
@@ -24,5 +46,17 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
+        env:
+          DB: ${{ matrix.db }}
+          DB_HOST: 127.0.0.1
+          DB_PORT: ${{ matrix.db_port }}
+          DB_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
         run: |
-          ./covid_project/manage.py test
+          cd covid_project && ./manage.py test
+
+
+
+
+
+
+
