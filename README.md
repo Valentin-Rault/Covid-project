@@ -3,10 +3,18 @@ Final project for SDA studies
 
 ## How to run it
 ### With SQLite
-Use docker run --net=host valentinrault/covid:val-2
+Use  
+
+``` 
+docker run --net=host -e DJANGO_SECRET_KEY="@czgjf(!68ap^5+mcd**bgl=$b*vyx5eb701cfs$xs))7oj^0c" valentinrault/covid:latest
+```
+
 
 ### With empty postgreSQL
-Use docker-compose up
+Use  
+```
+docker-compose up
+```
 
 ## Project Description
 This project is aiming to analyse data for the coronavirus and present it in a clear way using charts.
