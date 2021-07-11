@@ -3,6 +3,7 @@ covid_project/covid_project/__pycache__/
 covid_project/who_data/__pycache__/
 covid_project/who_data/migrations/__pycache__/
 covid_project/who_data/whodata.csv
+covid_project/who_data/.idea/
 covid_project/.vscode
 .vscode
 covid_project/.idea/
